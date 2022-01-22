@@ -8,7 +8,6 @@ jobs:
   docker:
     name: Dockerization
     runs-on: ubuntu-latest
-    container: node:10.19-jessie
     steps:
       - uses: actions/checkout@v2
       - name: Log in Docker Hub
