@@ -3,9 +3,7 @@ name: Dockerization
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
-      - workflows
+    branches: [ main, workflows ]
 jobs:
   docker:
     name: Dockerization
