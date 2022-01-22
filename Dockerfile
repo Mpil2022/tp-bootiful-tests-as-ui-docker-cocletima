@@ -13,9 +13,11 @@ ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 RUN node --version
 RUN npm --version
 RUN echo "install angular"
-RUN node --version
-RUN npm --version
-RUN sudo npm install -g npm@8.3.2
-RUN sudo npm install -g @angular/cli
+RUN mkdir ~/.npm-global
+RUN npm config set prefix '~/.npm-global'
+RUN export PATH=~/.npm-global/bin:$PATH
+RUN source ~/.profile
+RUN npm install -g npm@8.3.2
+RUN npm install -g @angular/cli
 RUN cd front-api-coletima & npm install
 CMD cd front-api-coletima & ng serve
