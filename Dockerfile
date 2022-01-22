@@ -15,6 +15,7 @@ RUN npm --version
 RUN echo "install angular"
 RUN node --version
 RUN npm --version
-RUN npm install -g @angular/cli
+RUN sudo npm install -g npm@8.3.2
+RUN sudo npm install -g @angular/cli
 RUN cd front-api-coletima & npm install
 CMD cd front-api-coletima & ng serve
