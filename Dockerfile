@@ -1,11 +1,7 @@
 # syntax=docker/dockerfile:1
-FROM ubuntu:latest
-COPY . .
-RUN echo "update"
-RUN apt-get update
-RUN echo "node"
-RUN apt-get install nodejs -y
-RUN echo "install angular"
-RUN npm install -g angular
-CMD cd front-api-coletima
-CMD ng serve
+FROM node:16.13.2
+COPY front-api-cocletima .
+RUN npm install -g npm@8.3.2
+RUN npm install -g @angular/cli
+RUN npm install
+CMD cd front-api-coletima & ng serve
