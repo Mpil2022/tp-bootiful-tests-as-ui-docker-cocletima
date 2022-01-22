@@ -1,12 +1,12 @@
 <h1>CocletimApp</h1>
 
-    <p>Nombre actuel : </p>{{acutalNumber}}
-    <button>Récupérer le nombre actuel</button>
+    <p>Nombre actuel : </p>{{actualNumber}}
+    <button mat-stroked-button name="get" (click)="getActualNumber()">Récupérer le nombre actuel</button>
 
-<form>
+<form [formGroup]="form">
     <label>Nombre à additionner au nombre actuel :</label>
   <mat-form-field appearance="fill">
-    <input matInput placeholder="0" type="number" name="number">
+    <input matInput placeholder="0" type="number" name="numberAdded" formControlName="numberAdded">
   </mat-form-field>
-  <button mat-stroked-button name="add">Additionner</button>
+  <button mat-stroked-button name="add" (click)="add(form.value.numberAdded)">Additionner</button>
 </form>
