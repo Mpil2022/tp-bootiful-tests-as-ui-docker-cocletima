@@ -12,6 +12,8 @@ ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 RUN node --version
 RUN npm --version
 RUN echo "install angular"
+RUN node --version
+RUN npm --version
 RUN npm install -g @angular/cli
-CMD cd front-api-coletima
-CMD ng serve
+RUN cd front-api-coletima & npm install
+CMD cd front-api-coletima & ng serve
