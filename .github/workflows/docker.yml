@@ -28,5 +28,4 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/cocletima-front:latest
-
           container: node:10.19-jessie
