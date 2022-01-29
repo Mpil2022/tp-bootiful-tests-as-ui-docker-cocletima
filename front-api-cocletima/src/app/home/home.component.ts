@@ -11,26 +11,26 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class HomeComponent implements OnInit {
 
-  private _actualNumber: number
+  private _currentNumber: number
   private _form: FormGroup;
 
   constructor(private _homeService: HomeService) {
-    this._actualNumber = {} as number
+    this._currentNumber = {} as number
     this._form = new FormGroup({
       numberAdded: new FormControl()
     })
   }
 
   ngOnInit(): void {
-    this._homeService.getActualNumber().subscribe({ next: (num: number) => this._actualNumber = num})
+    this._homeService.getCurrentNumber().subscribe({ next: (num: number) => this._currentNumber = num})
   }
 
-  get actualNumber(): number {
-    return this._actualNumber;
+  get currentNumber(): number {
+    return this._currentNumber;
   }
 
-  set actualNumber(value: number) {
-    this._actualNumber = value;
+  set currentNumber(value: number) {
+    this._currentNumber = value;
   }
 
   get form(): FormGroup {
@@ -41,8 +41,8 @@ export class HomeComponent implements OnInit {
     this._form = value;
   }
 
-  getActualNumber() {
-    this._homeService.getActualNumber().subscribe({ next: (num: number) => this._actualNumber = num})
+  getCurrentNumber() {
+    this._homeService.getCurrentNumber().subscribe({ next: (num: number) => this._currentNumber = num})
   }
 
   add(num: number) {

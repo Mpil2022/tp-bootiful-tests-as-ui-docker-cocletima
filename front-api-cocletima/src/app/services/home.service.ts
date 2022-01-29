@@ -9,7 +9,7 @@ export class HomeService {
 
   constructor(private _http : HttpClient) { }
 
-  getActualNumber(): Observable<number> {
+  getCurrentNumber(): Observable<number> {
     return this._http.get<number>("http://localhost:8080/adder/current");
   }
 
