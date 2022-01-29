@@ -1,7 +1,7 @@
 <h1>CocletimApp</h1>
 
-    <p>Nombre actuel : </p>{{actualNumber}}
-    <button mat-stroked-button name="get" (click)="getActualNumber()">Récupérer le nombre actuel</button>
+    <p name="currentNumber">Nombre actuel : </p>{{currentNumber}}
+    <button mat-stroked-button name="get" (click)="getCurrentNumber()">Récupérer le nombre actuel</button>
 
 <form [formGroup]="form">
     <label>Nombre à additionner au nombre actuel :</label>
