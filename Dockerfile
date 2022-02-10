@@ -4,4 +4,4 @@ COPY front-api-cocletima .
 RUN npm install -g npm@8.3.2
 RUN npm install -g @angular/cli
 RUN npm install
-CMD cd front-api-coletima & ng serve
+CMD ng serve
